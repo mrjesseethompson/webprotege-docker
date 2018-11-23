@@ -1,53 +1,48 @@
-# WebProtégé Docker Deployment
-Dockerfile for WebProtégé image.
+# A WebProtégé Docker Deployment
+
+This project packages the WebProtégé application as a docker image.
+
+<a href="https://hub.docker.com/r/mrjesseethompson/webprotege/"><img src="https://img.shields.io/badge/docker-automated%20build-blue.svg"/></a>
 
 # How to use the image
 
 1. Create a new user defined docker network
 
-```
-sudo docker network create webprotege
-```
+  ```
+  sudo docker network create webprotege
+  ```
 
 2. Start MongoDB
 
-```
-sudo docker run -d --network webprotege -v mongodb-data:/data/db -v mongodb-config:/data/configdb --name mongodb mongo:latest
-```
-
-3. Build the WebProtégé docker image
-
-From this repository's root directory:
-```
-sudo docker build . -t webprotege:latest
-```
+  ```
+  sudo docker run -d --network webprotege -v mongodb-data:/data/db -v mongodb-config:/data/configdb --name mongodb mongo:latest
+  ```
 
 3. Start WebProtégé
 
-```
-sudo docker run -d --network webprotege -p 8888:8080 -v webprotege-config:/etc/webprotege -v webprotege-data:/srv/webprotege -v webprotege-logs:/var/log/webprotege --name webprotege webprotege
+  ```
+  sudo docker run -d --network webprotege -p 8888:8080 -v webprotege-config:/etc/webprotege -v webprotege-data:/srv/webprotege -v webprotege-logs:/var/log/webprotege --name webprotege mrjesseethompson/webprotege:latest
 ```
 
 4. Configure WebProtégé with an administrative user account.
 
-```
-sudo docker exec -it webprotege java -jar /usr/local/webprotege/bin/webprotege-cli.jar create-admin-account
-```
+  ```
+  sudo docker exec -it webprotege java -jar /usr/local/webprotege/bin/webprotege-cli.jar create-admin-account
+  ```
 
-You'll be prompted to enter a username, email, and a password for the administrative account.
+  You'll be prompted to enter a username, email, and a password for the administrative account.
 
 5. Navigate to http://localhost:8888 using your web browser of choice.
 
+  You're going to see the following message:
 
-You're going to see the following message:
+  > WebProtégé is not configured properly
 
-> WebProtégé is not configured properly
+  Don't panic, we just need to finish confiugration via the UI, so login using the administrative user account that you created.
 
-Don't panic, we just need to finish confiugration via the UI, so login using the administrative user account that you created.
+  Go to http://localhost:8888#application/settings (URL hack). At a minimum you need to specify; a *System notification email address*, *Host*, and a *Port*. At this point in the process you can use `localhost` for *Host* and `8888` for *Port* to get started right away.
 
-Go to http://localhost:8888#application/settings (URL hack). At a minimum you need to specify; a *System notification email address*, *Host*, and a *Port*. At this point in the process you can use `localhost` for *Host* and `8888` for *Port* to get started right away.
-
-When you're done messing with the configuration, submit those changes (you may need to refresh the page to get the warning to go away).
+  When you're done messing with the configuration, submit those changes (you may need to refresh the page to get the warning to go away).
 
 ## We're done. What's next?
 
@@ -56,6 +51,13 @@ Here are some additional links to help you get started with WebProtégé.
 [Product Information Site](https://protege.stanford.edu/products.php) - Includes User and Administrative Guides.
 
 [GitHub Repository](https://github.com/protegeproject/webprotege) - If you're interested in looking under the hood.
+
+# Build the image locally
+
+From this repository's root directory:
+```
+sudo docker build . -t webprotege:local
+```
 
 # Development Notes
 
