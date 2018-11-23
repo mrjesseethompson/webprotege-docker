@@ -12,19 +12,19 @@ This project packages the WebProtégé application as a docker image.
   sudo docker network create webprotege
   ```
 
-1. Start MongoDB
+2. Start MongoDB
 
   ```
   sudo docker run -d --network webprotege -v mongodb-data:/data/db -v mongodb-config:/data/configdb --name mongodb mongo:latest
   ```
 
-1. Start WebProtégé
+3. Start WebProtégé
 
   ```
   sudo docker run -d --network webprotege -p 8888:8080 -v webprotege-config:/etc/webprotege -v webprotege-data:/srv/webprotege -v webprotege-logs:/var/log/webprotege --name webprotege mrjesseethompson/webprotege:latest
 ```
 
-1. Configure WebProtégé with an administrative user account.
+4. Configure WebProtégé with an administrative user account.
 
   ```
   sudo docker exec -it webprotege java -jar /usr/local/webprotege/bin/webprotege-cli.jar create-admin-account
