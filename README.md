@@ -34,7 +34,7 @@ sudo docker run -d --network webprotege -p 8888:8080 -v webprotege-config:/etc/w
 sudo docker exec -it webprotege java -jar /usr/local/webprotege/bin/webprotege-cli.jar create-admin-account
 ```
 
-You'll be prompted to enter an email and a password for the administrative account.
+You'll be prompted to enter a username, email, and a password for the administrative account.
 
 5. Navigate to http://localhost:8888 using your web browser of choice.
 
@@ -45,7 +45,7 @@ You're going to see the following message:
 
 Don't panic, we just need to finish confiugration via the UI, so login using the administrative user account that you created.
 
-Go to http://localhost:8888#application/settings. At a minimum you need to specify; a *System notification email address*, *Host*, and a *Port*. At this point in the process you can use `localhost` for *Host* and `8888` for *Port* to get started right away.
+Go to http://localhost:8888#application/settings (URL hack). At a minimum you need to specify; a *System notification email address*, *Host*, and a *Port*. At this point in the process you can use `localhost` for *Host* and `8888` for *Port* to get started right away.
 
 When you're done messing with the configuration, submit those changes (you may need to refresh the page to get the warning to go away).
 
