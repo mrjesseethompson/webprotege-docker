@@ -17,7 +17,7 @@ sudo docker run -d --network webprotege -v mongodb-data:/data/db -v mongodb-conf
 
 3. Build the WebProtégé docker image
 
-From this repositories root directory:
+From this repository's root directory:
 ```
 sudo docker build . -t webprotege:latest
 ```
@@ -49,11 +49,13 @@ Go to http://localhost:8888#application/settings. At a minimum you need to speci
 
 When you're done messing with the configuration, submit those changes (you may need to refresh the page to get the warning to go away).
 
-WebProtégé is now ready to use. Here are some additional links to help you learn more about WebProtégé.
+## We're done. What's next?
+
+Here are some additional links to help you get started with WebProtégé.
 
 [Product Information Site](https://protege.stanford.edu/products.php) - Includes User and Administrative Guides.
 
-[GitHub Repository](https://github.com/protegeproject/webprotege - If you're interested in popping open the hood.
+[GitHub Repository](https://github.com/protegeproject/webprotege) - If you're interested in looking under the hood.
 
 # Development Notes
 
