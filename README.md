@@ -4,7 +4,7 @@ This project packages the WebProtégé application as a docker image.
 
 [![Docker Automated Build](https://img.shields.io/badge/docker-automated%20build-blue.svg)](https://hub.docker.com/r/mrjesseethompson/webprotege/builds/)
 
-# How to use the image
+## How to use the image
 
 1. Create a new user defined docker network
 
@@ -44,7 +44,7 @@ This project packages the WebProtégé application as a docker image.
 
   When you're done messing with the configuration, submit those changes (you may need to refresh the page to get the warning to go away).
 
-## We're done. What's next?
+### We're done. What's next?
 
 Here are some additional links to help you get started with WebProtégé.
 
@@ -52,14 +52,14 @@ Here are some additional links to help you get started with WebProtégé.
 
 [GitHub Repository](https://github.com/protegeproject/webprotege) - If you're interested in looking under the hood.
 
-# Build the image locally
+## Build the image locally
 
 From this repository's root directory:
 ```
 sudo docker build . -t webprotege:local
 ```
 
-# Development Notes
+## Development Notes
 
 The Dockerfile was authored using the installation notes for [WebProtégé 3.0.0](https://github.com/protegeproject/webprotege/wiki/WebProt%C3%A9g%C3%A9-3.0.0-Installation), which was released Feb 7, 2018.  
 
@@ -75,12 +75,12 @@ Consequently, the [official Apache Tomcat repository](https://hub.docker.com/r/l
 
 MongoDB is intended to be run separately and is therefore not included with this image.
 
-## Configuration
+### Configuration Notes
 
 #### Apache Tomcat
 
 The only extra configuration required for Apache Tomcat to run WebProtégé is
-to set the JVM's file encoding to UTF-8. That is accomplished in the usual way by adding a setenv.sh file for Apache Tomcat. It contains the following line:
+to set the JVM's file encoding to UTF-8. This was accomplished in the usual way by adding a setenv.sh file for Apache Tomcat. It contains the following line:
 
 ```
 export CATALINA_OPTS="$CATALINA_OPTS -Dfile.encoding=UTF-8"
