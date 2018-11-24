@@ -61,7 +61,7 @@ sudo docker build . -t webprotege:local
 
 # Development Notes
 
-The Dockerfile was authorized using the installation notes for [WebProtégé 3.0.0](https://github.com/protegeproject/webprotege/wiki/WebProt%C3%A9g%C3%A9-3.0.0-Installation), which was released Feb 7, 2018.  
+The Dockerfile was authored using the installation notes for [WebProtégé 3.0.0](https://github.com/protegeproject/webprotege/wiki/WebProt%C3%A9g%C3%A9-3.0.0-Installation), which was released Feb 7, 2018.  
 
 
 WebProtégé has a handful of dependencies including:
