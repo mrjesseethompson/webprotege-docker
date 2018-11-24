@@ -3,18 +3,19 @@
 This project packages the WebProtégé application as a docker image.
 
 [![Docker Automated Build](https://img.shields.io/badge/docker-automated%20build-blue.svg)](https://hub.docker.com/r/mrjesseethompson/webprotege/builds/)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/3b38df209c3b4138ac2692927fc7ba63)](https://www.codacy.com/app/mrjesseethompson/webprotege-docker?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=mrjesseethompson/webprotege-docker&amp;utm_campaign=Badge_Grade)
 
 ## How to use the image
 
 1. Create a new user defined docker network
 
-  ```
+  ```bash
   sudo docker network create webprotege
   ```
 
 2. Start MongoDB
 
-  ```
+  ```bash
   sudo docker run -d \
       --network webprotege \
       -v mongodb-data:/data/db \
@@ -24,7 +25,7 @@ This project packages the WebProtégé application as a docker image.
 
 3. Start WebProtégé
 
-  ```
+  ```bash
   sudo docker run -d \
       --network webprotege \
       -p 8888:8080 \
@@ -37,7 +38,7 @@ This project packages the WebProtégé application as a docker image.
 
 4. Configure WebProtégé with an administrative user account.
 
-  ```
+  ```bash
   sudo docker exec -it webprotege \
       java -jar \
       /usr/local/webprotege/bin/webprotege-cli.jar \
@@ -69,7 +70,7 @@ Here are some additional links to help you get started with WebProtégé.
 ## Build the image locally
 
 From this repository's root directory:
-```
+```bash
 sudo docker build . -t webprotege:local
 ```
 
@@ -96,7 +97,7 @@ MongoDB is intended to be run separately and is therefore not included with this
 The only extra configuration required for Apache Tomcat to run WebProtégé is
 to set the JVM's file encoding to UTF-8. This was accomplished in the usual way by adding a setenv.sh file for Apache Tomcat. It contains the following line:
 
-```
+```bash
 export CATALINA_OPTS="$CATALINA_OPTS -Dfile.encoding=UTF-8"
 ```
 
@@ -104,6 +105,6 @@ export CATALINA_OPTS="$CATALINA_OPTS -Dfile.encoding=UTF-8"
 
 Because we expect MongoDB image in a separate container on the same docker network we updated the webprotege.properties configuration to:
 
-```
+```properties
 mongodb.host=mongodb
 ```  
