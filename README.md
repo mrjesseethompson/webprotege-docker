@@ -3,17 +3,16 @@
 This project packages the WebProtégé application as a docker image.
 
 [![Docker Automated Build](https://img.shields.io/badge/docker-automated%20build-blue.svg)](https://hub.docker.com/r/mrjesseethompson/webprotege/builds/)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/3b38df209c3b4138ac2692927fc7ba63)](https://www.codacy.com/app/mrjesseethompson/webprotege-docker?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=mrjesseethompson/webprotege-docker&amp;utm_campaign=Badge_Grade)
 
 ## How to use the image
 
-1. Create a new user defined docker network
+ 1. Create a new user defined docker network
 
   ```bash
   sudo docker network create webprotege
   ```
 
-2. Start MongoDB
+ 2. Start MongoDB
 
   ```bash
   sudo docker run -d \
@@ -23,7 +22,7 @@ This project packages the WebProtégé application as a docker image.
       --name mongodb mongo:latest
   ```
 
-3. Start WebProtégé
+ 3. Start WebProtégé
 
   ```bash
   sudo docker run -d \
@@ -36,7 +35,7 @@ This project packages the WebProtégé application as a docker image.
       mrjesseethompson/webprotege:latest
 ```
 
-4. Configure WebProtégé with an administrative user account.
+ 4. Configure WebProtégé with an administrative user account.
 
   ```bash
   sudo docker exec -it webprotege \
@@ -47,7 +46,7 @@ This project packages the WebProtégé application as a docker image.
 
   You'll be prompted to enter a username, email, and a password for the administrative account.
 
-5. Navigate to http://localhost:8888 using your web browser of choice.
+ 5. Navigate to <http://localhost:8888> using your web browser of choice.
 
   You're going to see the following message:
 
@@ -55,7 +54,7 @@ This project packages the WebProtégé application as a docker image.
 
   Don't panic, we just need to finish confiugration via the UI, so login using the administrative user account that you created.
 
-  Go to http://localhost:8888#application/settings (URL hack). At a minimum you need to specify; a *System notification email address*, *Host*, and a *Port*. At this point in the process you can use `localhost` for *Host* and `8888` for *Port* to get started right away.
+  Go to <http://localhost:8888#application/settings> (URL hack). At a minimum you need to specify; a *System notification email address*, *Host*, and a *Port*. At this point in the process you can use `localhost` for *Host* and `8888` for *Port* to get started right away.
 
   When you're done messing with the configuration, submit those changes (you may need to refresh the page to get the warning to go away).
 
@@ -81,9 +80,9 @@ The Dockerfile was authored using the installation notes for [WebProtégé 3.0.0
 
 WebProtégé has a handful of dependencies including:
 
-* Java 8
-* Tomcat >= 7
-* MongoDB
+  * Java 8
+  * Tomcat >= 7
+  * MongoDB
 
 
 Consequently, the [official Apache Tomcat repository](https://hub.docker.com/r/library/tomcat/) was a logical place to find a base image for WebProtégé. The [9-jre8-alpine](https://hub.docker.com/r/library/tomcat/tags/) tag was chosen to keep the size of the docker image small.
