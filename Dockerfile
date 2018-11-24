@@ -1,6 +1,6 @@
 # reference https://github.com/protegeproject/webprotege/wiki/WebProt%C3%A9g%C3%A9-3.0.0-Installation
 FROM tomcat:9-jre8-alpine
-MAINTAINER Jesse Thompson <mr.jesse.e.thompson@gmail.com>
+LABEL maintainer="Jesse Thompson <mr.jesse.e.thompson@gmail.com>"
 
 # Apache Tomcat configuration
 # The servlet container MUST be running in a JVM with file encoding set to UTF8
@@ -20,7 +20,7 @@ COPY ./assets/mail.properties /etc/webprotege/mail.properties
 # Download WebProtégé and install to Tomcat webapps folder
 ENV WEBPROTEGE_VERSION="3.0.0"
 WORKDIR /usr/local/tomcat/webapps
-RUN rm -rf * \
+RUN rm -rf -- * \
     && wget -q -O webprotege.war https://github.com/protegeproject/webprotege/releases/download/v${WEBPROTEGE_VERSION}/webprotege-${WEBPROTEGE_VERSION}.war \
     && mkdir ROOT \
     && unzip -q webprotege.war -d ROOT \
