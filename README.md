@@ -2,7 +2,7 @@
 
 This project packages the WebProtégé application as a docker image.
 
-[![Docker Automated Build](https://img.shields.io/badge/docker-automated%20build-blue.svg)](https://hub.docker.com/r/mrjesseethompson/webprotege/)
+[![Docker Automated Build](https://img.shields.io/badge/docker-automated%20build-blue.svg)](https://hub.docker.com/r/mrjesseethompson/webprotege/builds/)
 
 # How to use the image
 
