@@ -2,7 +2,7 @@
 
 This project packages the WebProtégé application as a docker image.
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d47d62eb1c3b4ff4953408aa0651d650)](https://app.codacy.com/app/mrjesseethompson/webprotege-docker?utm_source=github.com&utm_medium=referral&utm_content=mrjesseethompson/webprotege-docker&utm_campaign=Badge_Grade_Settings)[![Docker Automated Build](https://img.shields.io/badge/docker-automated%20build-blue.svg)](https://hub.docker.com/r/mrjesseethompson/webprotege/builds/)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d47d62eb1c3b4ff4953408aa0651d650)](https://app.codacy.com/app/mrjesseethompson/webprotege-docker?utm_source=github.com&utm_medium=referral&utm_content=mrjesseethompson/webprotege-docker&utm_campaign=Badge_Grade_Settings)[![Docker Build Status](https://img.shields.io/docker/build/mrjesseethompson/webprotege.svg)](https://hub.docker.com/r/mrjesseethompson/webprotege/builds/)
 
 ## How to use the image
 
